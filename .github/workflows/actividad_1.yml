@@ -2,11 +2,14 @@ name: actividad_1
 
 on:
   push:
+<<<<<<< HEAD:.github/workflows/actividad_1.yml
     branches: [ main ]  # Se ejecuta cuando hay cambios en la rama main
 
 jobs:
   build:
     runs-on: ubuntu-latest  # Se ejecuta en Linux (porque usas Ubuntu)
+=======
+   lows_actividad_1.yml
     permissions:
       contents: write
 
