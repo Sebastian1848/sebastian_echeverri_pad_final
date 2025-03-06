@@ -1,0 +1,45 @@
+name: actividad_1
+
+on:
+  push:
+    branches: [ main ]  # Se ejecuta cuando hay cambios en la rama main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Se ejecuta en Linux (porque usas Ubuntu)
+    permissions:
+      contents: write
+
+    steps:
+      - name: 📥 Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'  # Versión de Python
+
+      - name: 🏗️ Crear y activar entorno virtual
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          python -m pip install --upgrade pip
+
+      - name: 📦 Instalar dependencias
+        run: |
+          source venv/bin/activate
+          pip install -e .
+
+      - name: 🚀 Ejecutar script
+        run: |
+          source venv/bin/activate
+          python src/pad/actividad_1.py
+
+      - name: 📝 Commit y push de cambios
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Actualización automática desde GitHub Actions"
+          commit_user_name: "Sebastián Echeverri [GitHub Actions]"
+          commit_user_email: "sebastian.echeverri@est.iudigital.edu.co"
+          commit_author: "Sebastian1848 <sebastian.echeverri@est.iudigital.edu.co>"
+          add_options: "-u"
