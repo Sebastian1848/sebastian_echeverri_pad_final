@@ -37,4 +37,4 @@ jobs:
           commit_user_name: "Sebastián Echeverri [GitHub Actions]"
           commit_user_email: "sebastian.echeverri@est.iudigital.edu.co"
           commit_author: "Sebastian1848 Echeverri <sebastian.echeverri@est.iudigital.edu.co>"
-          add_options: "-u"  # Agrega solo archivos modificados
+          add_options: "-u" 
