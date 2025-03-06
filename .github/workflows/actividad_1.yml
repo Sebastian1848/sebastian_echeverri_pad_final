@@ -2,14 +2,11 @@ name: actividad_1
 
 on:
   push:
-on:
-  push:
-    branches: [ main ]  
+    branches: [ main ]  # Se ejecuta cuando hay cambios en la rama main
 
 jobs:
   build:
     runs-on: ubuntu-latest  
-   lows_actividad_1.yml
     permissions:
       contents: write
 
